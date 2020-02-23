@@ -15,8 +15,10 @@ packagelist=(
     g++-multilib
     flex
     mongodb
-    # librealsense2-dkms
-    # librealsense2-utils
+    librealsense2
+    librealsense2-dkms
+    librealsense2-gl
+    librealsense2-utils
     ros-kinetic-amcl
     ros-kinetic-bfl
     ros-kinetic-brics-actuator
