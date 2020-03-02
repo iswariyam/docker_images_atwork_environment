@@ -19,5 +19,8 @@ RUN sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu xenial main\" > /e
     && sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main" -u \
     && sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main" -u
 
+ENV ROBOT=youbot-brsu-4
+ENV ROBOT_ENV=brsu-c025
+
 COPY install_script.sh /
 RUN chmod +x /install_script.sh && /install_script.sh

@@ -1,0 +1,8 @@
+version: "3.0"
+services:
+    ros_kinetic_container:
+        image: myimage:v4
+        volumes:
+            - ~/:/root
+        tty: true
+        network_mode: "host"
