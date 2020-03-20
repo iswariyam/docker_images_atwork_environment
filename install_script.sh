@@ -68,6 +68,8 @@ packagelist=(
     ros-kinetic-laser-filters
     ros-kinetic-mongodb-store
     ros-kinetic-realsense2-camera
+    ros-kinetic-robot-state-publisher
+    ros-kinetic-gazebo-*
     bsdmainutils
     groff-base
     man-db

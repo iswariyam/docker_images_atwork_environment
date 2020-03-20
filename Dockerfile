@@ -1,5 +1,11 @@
 FROM ros:kinetic
 
+ENV NVIDIA_VISIBLE_DEVICES \
+    ${NVIDIA_VISIBLE_DEVICES:-all}
+
+ENV NVIDIA_DRIVER_CAPABILITIES \
+    ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
+
 RUN apt update -qq \
     && sudo apt-get install -y -qq software-properties-common \
     && sudo apt-get install -y -qq curl figlet \
@@ -22,5 +28,18 @@ RUN sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu xenial main\" > /e
 ENV ROBOT=youbot-brsu-4
 ENV ROBOT_ENV=brsu-c025
 
+# nvidia-docker hooks
+LABEL com.nvidia.volumes.needed="nvidia_driver"
+ENV PATH /usr/local/nvidia/bin:${PATH}
+ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
+
 COPY install_script.sh /
 RUN chmod +x /install_script.sh && /install_script.sh
+ARG UNAME=testuser
+ARG UID=1000
+ARG GID=1000
+RUN groupadd -g $GID -o $UNAME
+RUN useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME \
+    && adduser $UNAME sudo \
+    && echo "$UNAME ALL=(ALL:ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$UNAME
+USER $UNAME

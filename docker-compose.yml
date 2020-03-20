@@ -1,8 +1,20 @@
 version: "3.0"
 services:
     ros_kinetic_container:
-        image: myimage:v4
+        image: myimage
         volumes:
-            - ~/:/root
+            - /home/iswariya/Documents/Robocup:/temp
+            - /tmp/.X11-unix:/tmp/.X11-unix:rw
+            - /usr/lib32/nvidia-390:/usr/lib32/nvidia-390
+            - /usr/lib/nvidia-390:/usr/lib/nvidia-390
+            - ~/.rviz:~/.rviz  # include if any specific rviz settings are needed
+        environment:
+            - DISPLAY=$DISPLAY
+            - QT_X11_NO_MITSHM=1
+            - NVIDIA_VISIBLE_DEVICES=all
+            - LD_LIBRARY_PATH=/usr/lib/nvidia-390:/usr/lib32/nvidia-390
+        devices:
+            - /dev/dri:/dev/dri
+        privileged: true
         tty: true
         network_mode: "host"
