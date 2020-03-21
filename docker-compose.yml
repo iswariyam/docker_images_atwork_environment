@@ -13,6 +13,8 @@ services:
             - QT_X11_NO_MITSHM=1
             - NVIDIA_VISIBLE_DEVICES=all
             - LD_LIBRARY_PATH=/usr/lib/nvidia-390:/usr/lib32/nvidia-390
+            - ROBOT=youbot-brsu-4   # Can be modified here if necessary
+            - ROBOT_ENV=brsu-c025-sim # For youbot simulation
         devices:
             - /dev/dri:/dev/dri
         privileged: true

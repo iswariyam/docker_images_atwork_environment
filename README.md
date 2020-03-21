@@ -1,5 +1,6 @@
-# Docker Image MAS for @work
-This repository contains the dockerfile to build the docker image for MAS industrial robotics build environment. The docker image provides an **Ubuntu 16.04 based ROS-Kinetic** environment with all the necessary ros packages and dependencies already installed. Hence, it is sufficient to clone the MAS industrial robotics repository and perform a hassle free catkin build.
+# Docker Image for MAS @work
+This repository contains the dockerfile to build the docker image for MAS industrial robotics build environment. The docker image provides an **Ubuntu 16.04 based ROS-Kinetic** environment with all the necessary ros packages and dependencies already installed. Hence, it is sufficient to clone the MAS industrial robotics repository and perform a hassle free catkin build. <br>
+Note : This image can also be used for building and testing any ROS Kinetic package
 
 Advantages of using this image over a local build:
 * All necessary ROS dependencies and packages come bundled with the image
@@ -13,7 +14,7 @@ Advantages of using this image over a local build:
 ## Using the Image from Docker Hub
 
 * To use the image, first ensure docker engine and docker compose is installed on your machine. If not follow the intructions on the official docker website.
-* Download the sample docker-compose.yml file from this repository and modify the following based on your requirements:
+* Download the sample docker-compose.yml file from [this repository](https://github.com/iswariyam/docker_images_atwork_environment/blob/kinetic/docker-compose.yml) and modify the following based on your requirements:
   * Change /home/iswariya/Documents/Robocup to the folder where you have cloned the MAS industrial robotics repository or where you want your catkin workspace to be created
   * Modify the nvidia-390 with the version of nvidia driver installed in your system
   * $HOME/.rviz:/home/kinetic_user/.rviz is optional. Favorite Rviz configurations which are stored in your local file system will be mounted onto your docker container
