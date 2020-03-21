@@ -14,7 +14,7 @@ Advantages of using this image over a local build:
 ## Using the Image from Docker Hub
 
 * To use the image, first ensure docker engine and docker compose is installed on your machine. If not follow the intructions on the official docker website.
-* Download the sample docker-compose.yml file from this repository and modify the following based on your requirements:
+* Download the sample docker-compose.yml file from [this repository](https://github.com/iswariyam/docker_images_atwork_environment/blob/kinetic/docker-compose.yml) and modify the following based on your requirements:
   * Change /home/iswariya/Documents/Robocup to the folder where you have cloned the MAS industrial robotics repository or where you want your catkin workspace to be created
   * Modify the nvidia-390 with the version of nvidia driver installed in your system
   * $HOME/.rviz:/home/kinetic_user/.rviz is optional. Favorite Rviz configurations which are stored in your local file system will be mounted onto your docker container
