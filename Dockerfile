@@ -28,14 +28,9 @@ RUN sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu xenial main\" > /e
 ENV ROBOT=youbot-brsu-4
 ENV ROBOT_ENV=brsu-c025
 
-# nvidia-docker hooks
-LABEL com.nvidia.volumes.needed="nvidia_driver"
-ENV PATH /usr/local/nvidia/bin:${PATH}
-ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
-
 COPY install_script.sh /
 RUN chmod +x /install_script.sh && /install_script.sh
-ARG UNAME=testuser
+ARG UNAME=kinetic_user
 ARG UID=1000
 ARG GID=1000
 RUN groupadd -g $GID -o $UNAME
