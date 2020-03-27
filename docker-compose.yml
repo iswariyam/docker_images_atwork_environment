@@ -1,7 +1,7 @@
 version: "3.0"
 services:
     ros_melodic_container:
-        image: myimage1:latest
+        image: iswariyam/mas_industrial_robotics:melodic
         volumes:
             - /home/iswariya/Documents/Robocup:/temp
             - /tmp/.X11-unix:/tmp/.X11-unix:rw
