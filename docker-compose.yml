@@ -1,7 +1,7 @@
 version: "3.0"
 services:
     ros_kinetic_container:
-        image: iswariyam/mas_industrial_robotics:latest
+        image: iswariyam/mas_industrial_robotics:kinetic
         volumes:
             - /home/iswariya/Documents/Robocup:/temp
             - /tmp/.X11-unix:/tmp/.X11-unix:rw
