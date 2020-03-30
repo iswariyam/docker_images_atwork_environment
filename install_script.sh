@@ -12,6 +12,9 @@ packagelist=(
     python-rosinstall
     python-setuptools
     python-zmq
+    python-gtk2
+    python-gobject
+    python-wxgtk2.8
     g++-multilib
     flex
     mongodb
@@ -58,7 +61,7 @@ packagelist=(
     ros-kinetic-rosmon
     ros-kinetic-rqt-robot-dashboard
     ros-kinetic-serial
-    ros-kinetic-smach
+    ros-kinetic-smach*
     ros-kinetic-srdfdom
     ros-kinetic-twist-mux
     ros-kinetic-usb-cam
@@ -122,6 +125,8 @@ packagelist=(
     libxcomposite-dev
     nettle-dev
     libgtk-3-dev
+    libcanberra-gtk-module
+    libcanberra-gtk3-module
     libsys-hostname-long-perl
     libmail-sendmail-perl
 )
