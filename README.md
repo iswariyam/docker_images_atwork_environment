@@ -23,7 +23,7 @@ Advantages of using this image over a local build:
 docker-compose up
 ```
 Note: The very first time you run this command, the latest image will be pulled from docker-hub
-* Multiple bash sessions of the container can be opened using
+* To run commands inside the container open multiple bash sessions using
 ```sh
 docker exec -it <container name> bash
 ```

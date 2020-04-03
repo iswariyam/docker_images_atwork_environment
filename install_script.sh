@@ -51,7 +51,7 @@ packagelist=(
     ros-melodic-rqt-robot-dashboard
     ros-melodic-serial
     ros-melodic-smach
-    ros-melodic-smach-ros
+    ros-melodic-smach-*
     ros-melodic-image-view
     ros-melodic-robot-state-publisher
     ros-melodic-joint-state-publisher
@@ -120,6 +120,8 @@ packagelist=(
     libgtk-3-dev
     libsys-hostname-long-perl
     libmail-sendmail-perl
+    bison
+    libbison-dev
 )
 
 ### install debian packages listed in array above
