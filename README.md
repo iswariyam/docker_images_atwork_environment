@@ -36,6 +36,6 @@ docker-compose down
 ## Manually building the image
 * It is also possible to locally build the image using the dockerfile in this repository. To build the image use the following command
 ```sh
-docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg UNAME=$USER <image name> .
+docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg UNAME=$USER -t <image name> .
 ```
 * The locally built image can then used along with the existing docker-compose file by modifying the image name from `iswariyam/mas_industrial_robotics:latest` to \<image name\> and following the previously mentioned instructions.

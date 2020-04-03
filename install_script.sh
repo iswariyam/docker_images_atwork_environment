@@ -129,6 +129,8 @@ packagelist=(
     libcanberra-gtk3-module
     libsys-hostname-long-perl
     libmail-sendmail-perl
+    bison
+    libbison-dev
 )
 
 ### install debian packages listed in array above
