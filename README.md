@@ -18,12 +18,12 @@ Advantages of using this image over a local build:
   * Change /home/iswariya/Documents/Robocup to the folder where you have cloned the MAS industrial robotics repository or where you want your catkin workspace to be created
   * Modify the nvidia-390 with the version of nvidia driver installed in your system
   * $HOME/.rviz:/home/kinetic_user/.rviz is optional. Favorite Rviz configurations which are stored in your local file system will be mounted onto your docker container
-* Then run the following command from the folder containing the docker-compose.yml file. This spins up a container based on the [iswariyam/mas_industrial_robotics:latest](https://hub.docker.com/repository/docker/iswariyam/mas_industrial_robotics/general) image
+* Then run the following command from the folder containing the docker-compose.yml file. This spins up a container based on the [iswariyam/mas_industrial_robotics:kinetic](https://hub.docker.com/repository/docker/iswariyam/mas_industrial_robotics/general) image
 ```sh
 docker-compose up
 ```
 Note: The very first time you run this command, the latest image will be pulled from docker-hub
-* Multiple bash sessions of the container can be opened using
+* To run commands inside the container open multiple bash sessions using
 ```sh
 docker exec -it <container name> bash
 ```
