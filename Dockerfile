@@ -15,7 +15,7 @@ RUN apt update -qq \
 RUN sudo rm -rf /etc/ros/rosdep/sources.list.d/* \
     && sudo rosdep init -q \
     && sudo rosdep update -q \
-    && sudo apt install -y -qq python-rosinstall python-rosinstall-generator python-wstool build-essential python-catkin-tools python-pip \
+    && sudo apt install -y -qq python-rosinstall python-wstool build-essential python-catkin-tools python-pip \
     && sudo pip install catkin_pkg empy \
     && sudo rm -rf /var/lib/apt/lists/*
 
@@ -31,6 +31,24 @@ ENV ROBOT_ENV=brsu-c025
 
 COPY install_script.sh /
 RUN chmod +x /install_script.sh && /install_script.sh
+
+# OpenCV installation
+RUN wget https://github.com/opencv/opencv/archive/2.4.13.3.zip \
+&& unzip 2.4.13.3.zip \
+&& mkdir /opencv-2.4.13.3/cmake_binary \
+&& cd /opencv-2.4.13.3/cmake_binary \
+&& cmake -DWITH_QT=OFF \
+        -DWITH_OPENGL=ON \
+        -DFORCE_VTK=OFF \
+        -DWITH_TBB=ON \
+        -DWITH_GDAL=ON \
+        -DWITH_XINE=ON \
+        -DBUILD_EXAMPLES=OFF \
+        -DENABLE_PRECOMPILED_HEADERS=OFF .. \
+&& make install \
+&& rm /2.4.13.3.zip \
+&& rm -r /opencv-2.4.13.3
+
 ARG UNAME=kinetic_user
 ARG UID=1000
 ARG GID=1000
